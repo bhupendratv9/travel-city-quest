@@ -1,0 +1,22 @@
+import React from "react";
+import { cn } from "@/lib/utils";
+
+type PageLayoutProps = {
+  children: React.ReactNode;
+  className?: string;
+};
+
+
+export default function PageLayout({ children, className }: PageLayoutProps) {
+  return (
+    <main
+      className={cn(
+        "bg-[url('/assets/common/common-background.webp')] bg-cover bg-no-repeat max-w-screen min-h-screen" +
+        " overflow-hidden",
+        className,
+      )}
+    >
+      {children}
+    </main>
+  );
+}
