@@ -46,6 +46,6 @@ next-env.d.ts
 .vscode
 .idea
 
-# markdown (keep README.md only)
+# markdown (keep README)
 *.md
 !README.md

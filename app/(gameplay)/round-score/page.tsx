@@ -12,6 +12,7 @@ import BulbIconSvg from "@/components/svgs/BulbIconSVG";
 import { Tabs, TabsTrigger, TabsList, TabsContent } from "@/components/ui/tabs";
 import { Check, Info, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { toPublicImageUrl } from "@/lib/public-image-url";
 import useGameStore from "@/store/game-store";
 import { useGetGameStatusQuery } from "@/hooks/queries/get-game-status-query";
 import LoadingScreen from "@/components/common/LoadingScreen";
@@ -188,7 +189,7 @@ export default function Page() {
                         <div key={answer.id} className="space-y-2">
                           <div className="rounded overflow-hidden border-2 border-success">
                             <Image
-                              src={answer.image_url}
+                              src={toPublicImageUrl(answer.image_url)}
                               alt={answer.label}
                               height={200}
                               width={200}
@@ -210,7 +211,7 @@ export default function Page() {
                         <div key={answer.id} className="space-y-2">
                           <div className="rounded overflow-hidden border-2 border-error">
                             <Image
-                              src={answer.image_url}
+                              src={toPublicImageUrl(answer.image_url)}
                               alt={answer.label}
                               height={200}
                               width={200}

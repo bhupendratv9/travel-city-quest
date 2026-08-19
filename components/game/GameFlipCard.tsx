@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 import { getQueryClient } from "@/app/get-query-client";
 import { useQuestionStatusQuery } from "@/hooks/queries/get-question-status-query";
 import useLanguageStore from "@/store/language-store";
+import { toPublicImageUrl } from "@/lib/public-image-url";
 import { useGetProfileQuery } from "@/hooks/queries/get-profile-query";
 import { useCreateQueryString } from "@/hooks/use-create-query-string";
 import { domAnimation, LazyMotion, m, AnimatePresence } from "motion/react";
@@ -187,7 +188,7 @@ export default function GameFlipCard({ cards }: ImageCardsProps) {
                   }}
                 >
                   <Image
-                    src={card.image_url}
+                    src={toPublicImageUrl(card.image_url)}
                     alt="Game card"
                     height={200}
                     width={400}
@@ -205,7 +206,7 @@ export default function GameFlipCard({ cards }: ImageCardsProps) {
                   }}
                 >
                   <Image
-                    src={card.image_url}
+                    src={toPublicImageUrl(card.image_url)}
                     alt="Game card"
                     height={200}
                     width={400}
